@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2D Physics Engine — Mingqi Li</title>
+  <meta name="description" content="A real-time rigid-body physics engine written in C++ and rendered with SFML.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body class="project-page">
+  <nav class="site-nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="/">Mingqi Li</a>
+      <div class="nav-links"><a href="../index.html#work">All work</a><a href="../about/">About</a><a href="../contact/">Contact</a></div>
+    </div>
+  </nav>
+
+  <main>
+    <header class="project-hero">
+      <div class="wrap project-hero-grid">
+        <div>
+          <p class="mono-label">Project 04 · C++ / Simulation</p>
+          <h1>2D Physics Engine</h1>
+        </div>
+        <div>
+          <p class="project-deck">A real-time rigid-body simulation with impulse-based collisions and configurable forces.</p>
+          <dl class="project-facts">
+            <div><dt>Role</dt><dd>Solo project</dd></div>
+            <div><dt>Timeline</dt><dd>Apr — Jul 2025</dd></div>
+            <div><dt>Stack</dt><dd>C++ · SFML</dd></div>
+            <div><dt>Status</dt><dd>Completed</dd></div>
+          </dl>
+        </div>
+      </div>
+    </header>
+
+    <figure class="case-cover case-cover--video">
+      <video autoplay muted loop playsinline preload="metadata" poster="../assets/placeholders/cover-physics.svg" aria-label="Demonstration of the 2D physics engine">
+        <source src="../assets/placeholders/physicsengine_video.mp4" type="video/mp4">
+        Your browser does not support HTML video. <a href="../assets/placeholders/physicsengine_video.mp4">Download the demonstration video</a>.
+      </video>
+    </figure>
+
+    <div class="wrap case-study">
+      <section class="case-section">
+        <p class="mono-label">01 / Engine</p>
+        <div class="case-copy">
+          <h2>Build the mechanics to understand the mechanics.</h2>
+          <p>The engine simulates rigid bodies in real time and renders the result with SFML. Instead of relying on an existing physics library, I implemented the integration and collision response directly.</p>
+          <ul>
+            <li>Newtonian integration per body and frame.</li>
+            <li>Impulse-based collision resolution using mass and restitution.</li>
+            <li>Configurable restitution, drag and gravity.</li>
+          </ul>
+          <div class="case-links">
+            <a class="text-link" href="https://github.com/skynightgamer/2d_physics_engine" target="_blank" rel="noopener">View source</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <p class="mono-label">02 / Demonstration</p>
+        <div class="case-copy">
+          <h2>Interactive controls make the parameters visible.</h2>
+          <p>At runtime, objects can be added dynamically, gravity can be toggled and static obstacles can be introduced. Changing restitution, drag and gravity makes their effects visible immediately instead of hiding them behind a fixed demonstration.</p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <p class="mono-label">03 / Explanation</p>
+        <div class="case-copy">
+          <h2>Resolve each impact as a change in momentum.</h2>
+          <p>For each collision, the engine determines the contact normal and relative velocity, then applies an impulse based on the bodies’ masses and restitution. This changes velocity without relying on a third-party physics library.</p>
+        </div>
+      </section>
+
+      <nav class="case-nav" aria-label="Project navigation">
+        <a href="smartpark-ai.html">← SmartPark AI</a>
+        <a href="../index.html#work">All projects →</a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner"><span>© 2026 Mingqi Li · Munich</span><div class="footer-links"><a href="../index.html">Home</a><a href="mailto:mingqi_li@icloud.com">Email</a></div></div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

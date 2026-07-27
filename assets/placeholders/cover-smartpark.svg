@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100" role="img" aria-labelledby="title desc">
+  <title id="title">SmartPark AI concept illustration</title>
+  <desc id="desc">Route and chart illustration representing the planned wait-time prediction system.</desc>
+  <rect width="1600" height="1100" fill="#d5dfd8"/>
+  <g fill="none" stroke="#1a261f">
+    <path d="M70 326c188-102 292 61 462-20 157-75 232-226 405-146 181 84 254 54 593-72M-34 752c219-139 357-76 495 50 129 117 281 107 434-15 190-152 312-154 739-28" opacity=".23" stroke-width="45"/>
+    <path d="m184 791 204-274 225 89 178-273 229 134 342-209" stroke-width="12"/>
+    <g fill="#1a261f">
+      <circle cx="184" cy="791" r="27"/><circle cx="388" cy="517" r="27"/><circle cx="613" cy="606" r="27"/>
+      <circle cx="791" cy="333" r="27"/><circle cx="1020" cy="467" r="27"/><circle cx="1362" cy="258" r="27"/>
+    </g>
+    <rect x="1040" y="650" width="400" height="218" rx="8" fill="#eef3ef" stroke-width="4"/>
+    <path d="M1092 808V704M1092 808h296M1124 774l62-42 54 20 58-77 56 41" stroke-width="8"/>
+  </g>
+  <g fill="#1a261f" font-family="Arial, Helvetica, sans-serif">
+    <text x="64" y="78" font-size="24" letter-spacing="3">SMARTPARK AI · IN PROGRESS</text>
+    <text x="64" y="1010" font-size="39">Five-minute wait-time data · feature engineering complete</text>
+    <text x="64" y="1056" font-size="23" opacity=".62">CONCEPT ILLUSTRATION · MODEL TRAINING IS THE NEXT STAGE</text>
+  </g>
+</svg>

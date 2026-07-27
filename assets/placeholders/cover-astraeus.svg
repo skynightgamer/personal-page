@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Astraeus 1 concept illustration</title>
+  <desc id="desc">Line drawing representing the model-rocket flight system currently in design.</desc>
+  <rect width="1600" height="1100" fill="#d8d9d1"/>
+  <g stroke="#20211e" fill="none">
+    <path d="M0 220h1600M0 440h1600M0 660h1600M0 880h1600" opacity=".12"/>
+    <path d="M320 0v1100M640 0v1100M960 0v1100M1280 0v1100" opacity=".12"/>
+    <path d="M800 168c-91 113-132 247-132 399v244h264V567c0-152-41-286-132-399Z" stroke-width="6"/>
+    <path d="M668 694 551 862h117M932 694l117 168H932M764 811v105M836 811v105" stroke-width="6"/>
+    <circle cx="800" cy="467" r="43" stroke-width="6"/>
+  </g>
+  <g fill="#20211e" font-family="Arial, Helvetica, sans-serif">
+    <text x="64" y="78" font-size="24" letter-spacing="3">ASTRAEUS 1 · SYSTEM IN DESIGN</text>
+    <text x="64" y="1010" font-size="39">Redundant sensing · LoRa telemetry · servo recovery</text>
+    <text x="64" y="1056" font-size="23" opacity=".62">CONCEPT ILLUSTRATION · HARDWARE HAS NOT YET BEEN ASSEMBLED</text>
+  </g>
+</svg>

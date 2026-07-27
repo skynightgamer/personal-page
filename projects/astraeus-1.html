@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Astraeus 1 — Mingqi Li</title>
+  <meta name="description" content="Astraeus 1 is a model-rocket flight system in design, with planned custom avionics, redundant sensing, telemetry and parachute recovery.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body class="project-page">
+  <nav class="site-nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="/">Mingqi Li</a>
+      <div class="nav-links">
+        <a href="../index.html#work">All work</a>
+        <a href="../about/">About</a>
+        <a href="../contact/">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <header class="project-hero">
+      <div class="wrap project-hero-grid">
+        <div>
+          <p class="mono-label">Project 01 · Embedded systems / Aerospace</p>
+          <h1>Astraeus 1</h1>
+        </div>
+        <div>
+          <p class="project-deck">A model-rocket flight system currently in design, with custom avionics, redundant sensing, live telemetry and parachute recovery.</p>
+          <dl class="project-facts">
+            <div><dt>Role</dt><dd>Solo project</dd></div>
+            <div><dt>Timeline</dt><dd>Dec 2025 — ongoing</dd></div>
+            <div><dt>Status</dt><dd>Design phase · no components assembled yet</dd></div>
+            <div><dt>Stack</dt><dd>RPi Pico 2 · LoRa · GPS · KiCAD</dd></div>
+            <div><dt>Constraint</dt><dd>≤250 g · ≤120 m</dd></div>
+          </dl>
+        </div>
+      </div>
+    </header>
+
+    <figure class="case-cover">
+      <img src="../assets/placeholders/cover-astraeus.svg" alt="Concept illustration of the Astraeus 1 model-rocket design">
+    </figure>
+
+    <div class="wrap case-study">
+      <section class="case-section">
+        <p class="mono-label">01 / The idea</p>
+        <div class="case-copy">
+          <h2>One small rocket, treated as a complete flight system.</h2>
+          <p>Astraeus 1 is being designed to log and transmit altitude, acceleration and attitude in real time, then deploy a parachute by servo. The design follows Germany’s 250&nbsp;g and 120&nbsp;m model-rocket constraints.</p>
+          <p>The goal is not simply to launch. It is to design, build and validate an avionics stack whose sensing, communications and recovery behaviour can be tested and understood before flight.</p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <p class="mono-label">02 / System</p>
+        <div class="case-copy">
+          <h2>A planned, modular avionics architecture.</h2>
+          <ul>
+            <li><strong>Compute:</strong> A Raspberry Pi Pico 2 will run the flight-state machine and startup checks.</li>
+            <li><strong>Sensing:</strong> Two LSM6DSOX IMUs and two BMP388 barometers are planned for redundant measurements and Kalman-filter-based sensor fusion.</li>
+            <li><strong>Telemetry:</strong> GPS and an 868&nbsp;MHz LoRa downlink will report the rocket’s state to the ground station.</li>
+            <li><strong>Power and assembly:</strong> The design uses a LiPo, boost converter, custom two-layer PCB and modular JST connections so components can be tested and reused.</li>
+            <li><strong>Recovery:</strong> A servo-operated latch will release the parachute.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <p class="mono-label">03 / Validation</p>
+        <div class="case-copy">
+          <h2>Test the measurements before trusting the launch.</h2>
+          <p>The validation plan begins with breadboard tests of every sensor and communication link, followed by recovery tests, PCB design, ground-station validation and documented pre-flight checks. Results will be added here as the design becomes hardware.</p>
+          <p>The launch system will remain physically and electrically separate: a certified commercial controller will be used at an approved site, while the flight computer will handle sensing, telemetry and recovery only.</p>
+
+          <div class="case-links">
+            <a class="text-link" href="../contact/">Ask me about Astraeus</a>
+          </div>
+        </div>
+      </section>
+
+      <nav class="case-nav" aria-label="Project navigation">
+        <a href="../index.html#work">← All projects</a>
+        <a href="taskminder.html">Next: TaskMinder →</a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>© 2026 Mingqi Li · Munich</span>
+      <div class="footer-links"><a href="../index.html">Home</a><a href="mailto:mingqi_li@icloud.com">Email</a></div>
+    </div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>
