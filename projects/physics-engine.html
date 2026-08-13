@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>2D Physics Engine — Mingqi Li</title>
-  <meta name="description" content="A real-time rigid-body physics engine written in C++ and rendered with SFML.">
+  <meta name="description" content="How a school project and a curiosity about game engines became a small circle-based physics engine written in C++.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -22,15 +22,15 @@
   <main>
     <header class="project-hero">
       <div class="wrap project-hero-grid">
-        <div>
+        <div class="project-hero-title">
           <p class="mono-label">C++ / Simulation</p>
           <h1>2D Physics Engine</h1>
+          <p class="project-deck project-deck--intro">A small C++ physics engine I built to understand what happens behind the scenes when objects collide.</p>
         </div>
         <div>
-          <p class="project-deck">A real-time rigid-body simulation with impulse-based collisions and configurable forces.</p>
           <dl class="project-facts">
             <div><dt>Role</dt><dd>Solo project</dd></div>
-            <div><dt>Timeline</dt><dd>Apr — Jul 2025</dd></div>
+            <div><dt>Timeline</dt><dd>Apr - Jul 2025</dd></div>
             <div><dt>Stack</dt><dd>C++ · SFML</dd></div>
             <div><dt>Status</dt><dd>Completed</dd></div>
           </dl>
@@ -43,38 +43,50 @@
         <source src="../assets/placeholders/physicsengine_video.mp4" type="video/mp4">
         Your browser does not support HTML video. <a href="../assets/placeholders/physicsengine_video.mp4">Download the demonstration video</a>.
       </video>
+      <figcaption>The finished engine running in real time. The controls let me add moving or static circles and change the simulation while it is running.</figcaption>
     </figure>
 
     <div class="wrap case-study">
-      <section class="case-section">
-        <p class="mono-label">01 / Engine</p>
-        <div class="case-copy">
-          <h2>Build the mechanics to understand the mechanics.</h2>
-          <p>The engine simulates rigid bodies in real time and renders the result with SFML. Instead of relying on an existing physics library, I implemented the integration and collision response directly.</p>
-          <ul>
-            <li>Newtonian integration per body and frame.</li>
-            <li>Impulse-based collision resolution using mass and restitution.</li>
-            <li>Configurable restitution, drag and gravity.</li>
-          </ul>
+      <section class="case-narrative" aria-label="The 2D Physics Engine story">
+        <div class="case-copy narrative-chapter">
+          <h2>I had used physics engines before. I wanted to know what was happening inside them.</h2>
+          <p>After working with Unreal Engine and Godot, I started wondering how their physics actually worked behind the scenes. When my informatics class began a project phase, it gave me the perfect excuse to find out by building a small engine of my own.</p>
+          <p>I chose C++ simply because I enjoyed writing it. SFML kept the graphics side simple, so I could spend the short project window concentrating on the physics instead.</p>
+        </div>
+
+        <div class="case-copy narrative-chapter">
+          <h2>I started by taking apart engines built for learning.</h2>
+          <p>Before writing my own collision system, I looked through smaller projects such as <a class="text-link" href="https://github.com/erincatto/box2d-lite" target="_blank" rel="noopener">Box2D-Lite</a> to understand how they approached the problem. I decided to begin with circles because they were the simplest useful shape: there were no corners or rotations to handle, which let me focus on getting movement and collision response right.</p>
           <div class="case-links">
             <a class="text-link" href="https://github.com/skynightgamer/2d_physics_engine" target="_blank" rel="noopener">View source</a>
           </div>
         </div>
-      </section>
 
-      <section class="case-section">
-        <p class="mono-label">02 / Demonstration</p>
-        <div class="case-copy">
-          <h2>Interactive controls make the parameters visible.</h2>
-          <p>At runtime, objects can be added dynamically, gravity can be toggled and static obstacles can be introduced. Changing restitution, drag and gravity makes their effects visible immediately instead of hiding them behind a fixed demonstration.</p>
+        <div class="case-copy narrative-chapter">
+          <h2>Detecting a collision was only half the problem.</h2>
+          <p>The engine checks every pair of circles and compares the distance between their centres with their combined radii. But by the time a collision is detected, the circles can already be overlapping. I first move them apart along the collision normal, then calculate an impulse from their relative velocity, masses and bounciness.</p>
+          <p>Writing both steps myself made the equations much less abstract. I could immediately see when the separation was wrong or an impulse sent a circle in an unexpected direction.</p>
         </div>
-      </section>
 
-      <section class="case-section">
-        <p class="mono-label">03 / Explanation</p>
-        <div class="case-copy">
-          <h2>Resolve each impact as a change in momentum.</h2>
-          <p>For each collision, the engine determines the contact normal and relative velocity, then applies an impulse based on the bodies’ masses and restitution. This changes velocity without relying on a third-party physics library.</p>
+        <div class="case-copy narrative-chapter">
+          <h2>I used four small worlds to test different parts of the engine.</h2>
+          <p>The first is a ball pit for watching gravity and bouncing. The second is a collision-counting experiment, the third is an open sandbox where I can build ramps from static circles, and the fourth is a billiards setup that puts many collisions into one chain reaction. Switching between them was more useful than building one polished demonstration because each exposed different mistakes.</p>
+        </div>
+
+        <div class="case-copy narrative-chapter">
+          <h2>My favourite test produces the first two digits of π.</h2>
+          <p>In the second world, a ball with 100 times the mass of another moves towards it and a wall. Gravity and drag are disabled, the collisions are perfectly elastic and the engine counts every impact. The final count is 31: the first two digits of π. It was a satisfying way to check that momentum was behaving as I expected.</p>
+        </div>
+
+        <div class="case-copy narrative-chapter">
+          <h2>The controls turned it into a small physics playground.</h2>
+          <p>I can switch between the four worlds, pause the simulation, toggle gravity, spawn moving or stationary circles and clear everything to start again. Each world also has its own preset values for gravity, drag and bounciness. Changing the setup and immediately watching the result helped me understand what each value actually did.</p>
+        </div>
+
+        <div class="case-copy narrative-chapter">
+          <h2>Keeping the scope small was part of the project.</h2>
+          <p>The engine only handles circles, without polygons, rotation or friction. It also checks every circle against every other circle, which is simple but becomes inefficient as the number of objects grows. Those limits kept the project manageable during the short school project phase and gave me time to understand the fundamentals properly.</p>
+          <p>If I continued the project, I would add rotating bodies and friction first, then replace the pair-by-pair collision checks with spatial partitioning so the engine could handle larger scenes.</p>
         </div>
       </section>
 
