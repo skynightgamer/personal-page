@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>TaskMinder — Mingqi Li</title>
-  <meta name="description" content="TaskMinder is a school-organisation platform with more than 80 daily active users.">
+  <meta name="description" content="How a nearly empty homework planner became TaskMinder, an open-source school platform used by more than 80 people daily.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/design-system.css">
   <link rel="stylesheet" href="../css/site.css">
 </head>
-<body class="project-page">
+<body class="project-page taskminder-page">
   <nav class="site-nav">
     <div class="wrap nav-inner">
       <a class="brand" href="/">Mingqi Li</a>
@@ -22,17 +22,18 @@
   <main>
     <header class="project-hero">
       <div class="wrap project-hero-grid">
-        <div>
-          <p class="mono-label">Project 02 · Product / Backend</p>
+        <div class="project-hero-title">
+          <p class="mono-label">Product / Backend</p>
           <h1>TaskMinder</h1>
+          <p class="project-deck project-deck--intro">My class kept missing homework and exams because the information was everywhere. TaskMinder is our attempt to fix that.</p>
         </div>
         <div>
-          <p class="project-deck">One place for homework, exams, files and substitution plans—used by students every day.</p>
           <dl class="project-facts">
             <div><dt>Role</dt><dd>Co-founder &amp; team lead · Backend · DevOps</dd></div>
             <div><dt>Timeline</dt><dd>Dec 2024 — ongoing</dd></div>
             <div><dt>Stack</dt><dd>Express.js · PostgreSQL · Redis · Docker</dd></div>
-            <div><dt>Team</dt><dd>Four co-founders</dd></div>
+            <div><dt>Team</dt><dd>Two co-founders</dd></div>
+            <div><dt>Code</dt><dd>Open source on GitHub</dd></div>
           </dl>
         </div>
       </div>
@@ -40,40 +41,77 @@
 
     <figure class="case-cover">
       <img src="../assets/placeholders/cover-taskminder.png" alt="Concept illustration of the TaskMinder school-organisation platform">
+      <figcaption>TaskMinder keeps the things we need for school - homework, exams, files and timetable changes - in one place.</figcaption>
     </figure>
 
     <div class="wrap case-study">
-      <section class="case-section">
-        <p class="mono-label">01 / Problem</p>
-        <div class="case-copy">
-          <h2>School information is useful only when students can find it.</h2>
-          <p>TaskMinder brings homework, exams, events, class files and substitution plans into one product. It integrates with DSBMobile’s Untis-based substitution-plan system, supports role-based access and runs on EU infrastructure. We implemented the integration after analysing the app’s API and confirmed the approach with both DSBMobile and Untis.</p>
-          <p>As co-founder and team lead, I coordinate planning, adoption and the public launch while building the backend and operating the deployment.</p>
-        </div>
-      </section>
+      <section class="case-narrative" aria-label="The TaskMinder story">
+        <div class="case-copy narrative-chapter">
+          <h2>We were not ignoring our homework. Most of the time, we did not know it existed.</h2>
+          <p>In my class, almost no homework was getting done. Tasks were passed around verbally, files lived in different places and the date of the next exam could disappear inside a WhatsApp chat. My old homework planner tells the story pretty well: entire weeks are simply empty.</p>
+          <p>I first thought people were simply forgetting to write things down. Then I looked at my own planner and realised I was doing exactly the same. The problem was not a lack of motivation: the information was scattered, easy to miss and hard to find again.</p>
 
-      <section class="case-section">
-        <p class="mono-label">02 / Product</p>
-        <div class="case-copy">
-          <h2>Designed around the school day, not a generic to-do list.</h2>
-          <p>A student can open the dashboard, see what changed, inspect the next task and find the relevant file without searching through several chats and school systems.</p>
+          <figure class="story-media story-media--wide">
+            <img src="../assets/taskminder/hauptseite.png" alt="Concept illustration of the TaskMinder school-organisation platform">
+            <figcaption>My homework planner from before TaskMinder - whole weeks with almost nothing written down.</figcaption>
+          </figure>
         </div>
-      </section>
 
-      <section class="case-section">
-        <p class="mono-label">03 / Results</p>
-        <div class="case-copy">
-          <h2>A working product with real users and external recognition.</h2>
+        <div class="case-copy narrative-chapter">
+          <h2>Everything we kept losing, in one place.</h2>
+          <p>We built the first version for ourselves. I wanted to open one page before school and immediately know what was due, whether anything had changed and where the file I needed was.</p>
+          <p>That became the basic idea behind TaskMinder: homework, exams, events, class files and substitution plans together. We kept it close to the way our own school days actually work, instead of starting with a generic to-do list.</p>
+
+          <div class="story-grid story-grid--product" aria-label="Reserved spaces for TaskMinder product mockups">
+            <figure class="story-media">
+              <img src="../assets/taskminder/hauptseite.png" alt="Concept illustration of the TaskMinder school-organisation platform">
+              <figcaption>The dashboard puts upcoming work and changes first.</figcaption>
+            </figure>
+            <figure class="story-media">
+              <img src="../assets/taskminder/inaction.png" alt="Concept illustration of the TaskMinder school-organisation platform">
+              <figcaption>Adding a homework is quick and easy with auto-fill wherever possible.</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="case-copy narrative-chapter">
+          <h2>It began as a rough tool for our own class.</h2>
+          <p>TaskMinder is built by my co-founder and me. I lead the project, write most of the backend and keep the deployment running. One of the trickier parts was bringing in substitution plans. I studied how DSBMobile communicates with its Untis-based system, and we checked our approach with both companies before using it.</p>
+          <p>Our early versions were rough, but that was useful. We could put them in front of classmates, watch where they got stuck and change things quickly. I learned more from those conversations than I would have from polishing the first version in private.</p>
+
+          <figure class="story-media story-media--wide">
+              <img src="../assets/taskminder/earlyview.png" alt="Concept illustration of the TaskMinder school-organisation platform">
+            <figcaption>An early frontend prototype version (December 2024) with the first principles laid down.</figcaption>
+          </figure>
+        </div>
+
+        <div class="case-copy narrative-chapter">
+          <h2>The code is public.</h2>
+          <p>I wanted people to be able to see what we had actually built, so we made TaskMinder open source. The code is public on GitHub: anyone can inspect it, report a problem or build on our work. It also lets me show the technical side of the project, including the imperfect parts and the decisions we changed later.</p>
+          <a class="text-link" href="https://github.com/TaskMinder/TaskMinder" target="_blank" rel="noopener">Explore the source code</a>
+        </div>
+
+        <div class="case-copy narrative-chapter narrative-chapter--results">
+          <h2>People at school actually use it.</h2>
+          <p>TaskMinder started to feel real when it became useful to people outside our two-person team. More than 80 people now use it on a typical day. Reaching the national top four in the Apps &amp; Platforms category of the StartupTeens Challenge was exciting, but seeing people come back to the product each day means more to me.</p>
           <div class="result-strip">
             <div class="result"><strong>80+</strong><span>Daily active users</span></div>
             <div class="result"><strong>Top 4</strong><span>Germany, Apps &amp; Platforms</span></div>
-            <div class="result"><strong>4</strong><span>Co-founders</span></div>
+            <div class="result"><strong>1,200+</strong><span>Homework and events created</span></div>
           </div>
+
+          <figure class="story-media story-media--wide">
+            <div class="story-placeholder story-placeholder--screen" role="img" aria-label="Reserved space for a screenshot of the TaskMinder monitoring dashboard">
+              <span class="mono-label">Usage evidence</span>
+              <strong>The monitoring dashboard</strong>
+              <p>Crop to the useful time range and hide any private data before adding it.</p>
+            </div>
+            <figcaption>A real usage graph supports the 80+ daily-user figure better than another product mockup.</figcaption>
+          </figure>
 
           <div class="case-links">
             <a class="text-link" href="https://taskminder.de" target="_blank" rel="noopener">Visit TaskMinder</a>
             <a class="text-link" href="https://info.taskminder.de" target="_blank" rel="noopener">Project info</a>
-            <a class="text-link" href="https://github.com/TaskMinder/TaskMinder" target="_blank" rel="noopener">Source on GitHub</a>
             <a class="text-link" href="https://youtu.be/gtORHgRzmz8" target="_blank" rel="noopener">Watch the pitch</a>
           </div>
         </div>
@@ -87,7 +125,7 @@
   </main>
 
   <footer class="footer">
-    <div class="wrap footer-inner"><span>© 2026 Mingqi Li · Munich</span><div class="footer-links"><a href="../index.html">Home</a><a href="mailto:mingqi_li@icloud.com">Email</a></div></div>
+    <div class="wrap footer-inner"><span>© 2026 Mingqi Li</span></div>
   </footer>
   <script src="../js/main.js"></script>
 </body>
