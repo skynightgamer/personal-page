@@ -1037,6 +1037,11 @@
   text-align: right;
 }
 
+.compact-list + .baseline-link {
+  display: block;
+  margin-top: 16px;
+}
+
 .baseline-footer {
   padding: 64px 0 36px;
 }
