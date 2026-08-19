@@ -1306,7 +1306,8 @@
   font-size: 16px;
 }
 
-.taskminder-page .case-nav {
+.taskminder-page .case-nav,
+.astraeus-page .case-nav {
   margin-top: clamp(52px, 8vw, 84px);
   padding-block: clamp(36px, 5vw, 48px);
 }
