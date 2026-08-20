@@ -561,6 +561,17 @@
   margin-top: 38px;
 }
 
+.story-grid--product {
+  align-items: start;
+}
+
+.story-column {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 24px;
+}
+
 .story-media > img {
   width: 100%;
   height: auto;
@@ -769,6 +780,10 @@
   .split-lists,
   .story-grid {
     grid-template-columns: 1fr;
+  }
+
+  .story-grid--product .story-column {
+    display: contents;
   }
 
   .project-grid {
