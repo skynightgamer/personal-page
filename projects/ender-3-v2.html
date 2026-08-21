@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ender 3 V2 Rebuild — Mingqi Li</title>
+  <meta name="description" content="A cheap 3D printer taken apart to the base plate and rebuilt: squared by hand, rewired with crimped ferrules, converted to direct drive and moved to a Klipper configuration written from the documentation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body class="project-page ender-page">
+  <nav class="site-nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="/">Mingqi Li</a>
+      <div class="nav-links"><a href="../index.html#work">All work</a><a href="../about/">About</a><a href="../contact/">Contact</a></div>
+    </div>
+  </nav>
+
+  <main>
+    <header class="project-hero">
+      <div class="wrap project-hero-grid">
+        <div class="project-hero-title">
+          <p class="mono-label">Hardware / 3D printing</p>
+          <h1>Ender 3 V2 Rebuild</h1>
+          <p class="project-deck project-deck--intro">A cheap printer I took apart down to the base plate and rebuilt: squared by hand, rewired, converted to direct drive and running a Klipper configuration I wrote myself.</p>
+        </div>
+        <div>
+          <dl class="project-facts">
+            <div><dt>Role</dt><dd>Solo project</dd></div>
+            <div><dt>Timeline</dt><dd>Dec 2021 - ongoing</dd></div>
+            <div><dt>Stack</dt><dd>Klipper · Marlin · Orbiter v2 · BLTouch · Orca Slicer</dd></div>
+            <div><dt>Status</dt><dd>Running · about 1,250 h printed</dd></div>
+            <div><dt>Constraint</dt><dd>Lives in the living room</dd></div>
+          </dl>
+        </div>
+      </div>
+    </header>
+
+    <figure class="case-cover">
+      <img src="../assets/placeholders/cover-ender3.svg" alt="Concept illustration of the rebuilt Ender 3 V2 seen from the front">
+      <figcaption>A concept illustration for now - photographs of the machine will replace it.</figcaption>
+    </figure>
+
+    <div class="wrap case-study">
+      <section class="case-narrative" aria-label="The Ender 3 V2 rebuild story">
+        <div class="case-copy narrative-chapter">
+          <h2>Almost everything I print is a part for another project.</h2>
+          <p>I bought the printer in December 2021. It is not a project on its own shelf: nearly everything that comes off it is a bracket, mount or housing I designed in CAD for something else. That is what made the machine itself worth engineering. A printer that needs supervision is not a tool, and I wanted a tool.</p>
+          <p>It is also the machine behind the weekly CAD, 3D-printing and robotics courses I lead, which meant I had to actually understand why it behaved the way it did.</p>
+        </div>
+
+        <div class="case-copy narrative-chapter">
+          <h2>After a year of barely using it, every layer came out slightly different.</h2>
+          <p>Towards the end of 2022 I started printing seriously again, and the results were wrong in a way I could see but not explain: each layer stuck out a little differently from the one below it, so the walls came out uneven all the way up the part.</p>
+          <p>I assumed the cause was mechanical. Uneven layers look like a geometry problem, and this is a printer assembled from a kit by a fifteen-year-old, so a crooked frame was an entirely believable explanation.</p>
+        </div>
+
+        <div class="case-copy narrative-chapter">
+          <h2>So I took the whole printer apart, down to the base plate.</h2>
+          <p>In mid-2023 I stripped it completely - not a partial teardown, but everything removed until only the base plate was left - and rebuilt it with a caliper and an engineer's square, checking that things were actually at right angles instead of assuming it.</p>
+          <p>Several parts changed on the way back together. The bed springs were replaced with solid spacers, so the bed stops drifting out of level between prints. The glass plate became a PEI sheet. I bought heatbed insulation and cut it to size. I also moved the original extruder stepper to the Y axis, because its datasheet gave it more torque than the motor that had been sitting there.</p>
+
+          <figure class="story-media story-media--wide">
+            <div class="story-placeholder" role="img" aria-label="Reserved space for a photograph of the printer stripped down to its base plate">
+              <span class="mono-label">Photograph to follow</span>
+              <strong>The printer stripped to the base plate</strong>
+            </div>
+            <figcaption>Mid-2023: everything removed, ready to be rebuilt square.</figcaption>
+          </figure>
+        </div>
+
+        <div class="case-copy narrative-chapter">
+          <h2>The problem was never the frame. It was flow.</h2>
+          <p>I had changed the extruder twice - the plastic Bowden extruder for an aluminium one, and later the whole thing for an Orbiter v2 direct drive - and I had not properly recalibrated the extrusion afterwards. The machine was pushing an inconsistent amount of filament, and that was what I had been seeing on every layer.</p>
+          <p>The teardown did not find the bug. It did fix a list of things I did not know were wrong, and it taught me the more useful lesson: when the hardware changes, recalibrate before forming a theory. Testing the cheap hypothesis first would have cost an evening instead of a summer.</p>
+          <p>The slicer profiles came out of the same period. Most of the values in my Orca profiles are trial and error, with a temperature tower and flow calibration underneath them to keep the guessing bounded.</p>
+        </div>
+
+        <div class="case-copy narrative-chapter">
+          <h2>The wiring was the part that actually worried me.</h2>
+          <p>The stock cables arrived with their conductor ends tinned - dipped in solder - and then clamped into screw terminals. Solder creeps under sustained pressure, so the joint slowly loosens, the contact resistance rises and the terminal heats. I met the failure first-hand: a badly seated connection sparked.</p>
+          <p>I re-terminated the screw connections with crimped ferrules and went through the grounding while everything was open. Two components were replaced along the way: a dead thermistor, whose connector I soldered onto new wires, and a failed part-cooling fan. The loose cables that were now hanging around got a holder I designed and printed, mounted in the spot the original Bowden extruder had occupied.</p>
+
+          <div class="story-grid" aria-label="Photographs of the rewiring and the toolhead">
+            <figure class="story-media">
+              <div class="story-placeholder" role="img" aria-label="Reserved space for a close-up photograph of the crimped ferrules at the mainboard">
+                <span class="mono-label">Photograph to follow</span>
+                <strong>Crimped ferrules at the board</strong>
+              </div>
+              <figcaption>Every screw terminal re-terminated, replacing the tinned ends.</figcaption>
+            </figure>
+            <figure class="story-media">
+              <div class="story-placeholder" role="img" aria-label="Reserved space for a close-up photograph of the direct drive toolhead">
+                <span class="mono-label">Photograph to follow</span>
+                <strong>The direct drive toolhead</strong>
+              </div>
+              <figcaption>Orbiter v2 on a mount I designed, with a Noctua 4020 and the printed cable holder.</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="case-copy narrative-chapter">
+          <h2>It had to be quiet, because it lives in the living room.</h2>
+          <p>That was the only space available, which turned noise into a real requirement rather than a nice extra. The mainboard fan came off entirely. Klipper needs a Raspberry Pi anyway, so its replacement is a 5&nbsp;V fan running off the Pi's 3.3&nbsp;V rail: deliberately undervolted, so it turns slowly and I cannot hear it. The power supply fan was replaced with a 120&nbsp;mm Noctua, and I reprinted the power supply enclosure on the printer itself before fitting it.</p>
+          <p>Quieter cooling is less cooling, so the airflow I had removed had to come back passively. I took out the doubled metal plate in front of the power supply so that it could actually breathe, and raised the whole printer on printed risers to open up the space underneath it.</p>
+
+          <div class="story-grid" aria-label="Photographs of the cooling and airflow changes">
+            <figure class="story-media">
+              <div class="story-placeholder" role="img" aria-label="Reserved space for a photograph of the power supply with its Noctua fan and reprinted enclosure">
+                <span class="mono-label">Photograph to follow</span>
+                <strong>Power supply and 120 mm Noctua</strong>
+              </div>
+              <figcaption>The enclosure around it was printed on this machine before the upgrade went in.</figcaption>
+            </figure>
+            <figure class="story-media">
+              <div class="story-placeholder" role="img" aria-label="Reserved space for a photograph of the printed risers under the printer">
+                <span class="mono-label">Photograph to follow</span>
+                <strong>Printed risers underneath</strong>
+              </div>
+              <figcaption>Passive airflow, bought back after the loud fans were removed.</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="case-copy narrative-chapter">
+          <h2>Klipper, before there was a configuration for this printer.</h2>
+          <p>I started on <a class="text-link" href="https://github.com/mriscoc/Ender3V2S1" target="_blank" rel="noopener">mriscoc's Professional Firmware</a>, a Marlin fork for this machine, and moved to Klipper around 2022. At that point there was no ready-made Ender 3 V2 configuration to copy, so I wrote mine from the Klipper documentation and corrected it by trial and error until the printer behaved. The mainboard had been swapped for a Creality 4.2.7 by then, and bed levelling runs on a BLTouch with adaptive meshing, so the mesh is measured across the area the print actually occupies.</p>
+          <p>A set of macros for automating parts of a print run is still unfinished, which is the honest state of it.</p>
+        </div>
+
+        <div class="case-copy narrative-chapter">
+          <h2>Two upgrades I tested and did not keep.</h2>
+          <p>Input shaping and pressure advance are the two things every guide tells you to enable. I tried both and kept neither. My print speeds are low enough that input shaping had almost nothing to correct, and my pressure advance test prints were indistinguishable from the ones printed with no pressure advance at all.</p>
+          <p>Working out which parameters do nothing on a particular machine turned out to be about as valuable as finding the ones that do. It is the difference between tuning a printer and copying someone else's tune.</p>
+        </div>
+
+        <div class="case-copy narrative-chapter narrative-chapter--results">
+          <h2>Where it stands now.</h2>
+          <p>The machine has been running since December 2021 and still is. Parts I design come off it fitting properly the first time, with visibly cleaner walls than before the rebuild, and failed prints are rare. Its speed ceiling is the original hotend: the maximum rate at which it can melt filament, rather than anything in the motion system, is what stops me going faster.</p>
+          <div class="result-strip">
+            <div class="result"><strong>~1,250 h</strong><span>Printed across Marlin and Klipper</span></div>
+            <div class="result"><strong>120 mm/s</strong><span>Print speed, up from 60</span></div>
+            <div class="result"><strong>4.5 years</strong><span>In service, still running</span></div>
+          </div>
+          <p>Most of my printing now happens on a preassembled Prusa MK4S, simply because it is faster. That printer also arrived with a dimensional problem of its own - so I took it apart too, and fixed it. Being able to do that to a machine I had not built is the clearest thing the Ender gave me.</p>
+
+          <figure class="story-media story-media--wide">
+            <div class="story-placeholder story-placeholder--screen" role="img" aria-label="Reserved space for a photograph of parts printed on the machine">
+              <span class="mono-label">Photograph to follow</span>
+              <strong>Parts printed for other projects</strong>
+            </div>
+            <figcaption>What the machine exists for: CAD parts for whatever I am building at the time.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <nav class="case-nav" aria-label="Project navigation">
+        <a href="physics-engine.html">← 2D Physics Engine</a>
+        <a href="../index.html#work">All projects →</a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner"><span>© 2026 Mingqi Li</span></div>
+  </footer>
+  <script src="../js/main.js"></script>
+</body>
+</html>

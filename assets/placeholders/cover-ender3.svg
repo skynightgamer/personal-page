@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1100" role="img" aria-labelledby="title desc">
+  <title id="title">Ender 3 V2 rebuild concept illustration</title>
+  <desc id="desc">Line drawing of the rebuilt Ender 3 V2, seen from the front.</desc>
+  <rect width="1600" height="1100" fill="#d6d2c8"/>
+  <g stroke="#221f1a" fill="none">
+    <path d="M0 220h1600M0 440h1600M0 660h1600M0 880h1600" opacity=".12"/>
+    <path d="M320 0v1100M640 0v1100M960 0v1100M1280 0v1100" opacity=".12"/>
+    <g stroke-width="6">
+      <rect x="470" y="768" width="660" height="36"/>
+      <rect x="506" y="804" width="52" height="22"/>
+      <rect x="1042" y="804" width="52" height="22"/>
+      <rect x="520" y="212" width="32" height="556"/>
+      <rect x="1048" y="212" width="32" height="556"/>
+      <rect x="520" y="180" width="560" height="32"/>
+      <rect x="520" y="430" width="560" height="46"/>
+      <rect x="758" y="476" width="98" height="84"/>
+      <path d="M793 560h28l-14 30Z"/>
+      <rect x="864" y="470" width="54" height="54"/>
+      <rect x="566" y="716" width="468" height="16"/>
+      <path d="M640 732h320v20H640Z" opacity=".55"/>
+      <rect x="1004" y="726" width="118" height="46"/>
+      <path d="M760 180v-42h124v42"/>
+      <circle cx="822" cy="96" r="66"/>
+      <circle cx="822" cy="96" r="22"/>
+    </g>
+    <g stroke-width="4" opacity=".5">
+      <path d="M552 452h-72M1080 452h72"/>
+      <path d="M300 716h266M1034 716h266" stroke-dasharray="18 14"/>
+    </g>
+  </g>
+  <g fill="#221f1a" font-family="Arial, Helvetica, sans-serif">
+    <text x="64" y="78" font-size="24" letter-spacing="3">ENDER 3 V2 · REBUILT MACHINE</text>
+    <text x="64" y="1010" font-size="39">Klipper · direct drive · rewired · squared · ~1,250 h printed</text>
+    <text x="64" y="1056" font-size="23" opacity=".62">CONCEPT ILLUSTRATION · PHOTOGRAPHS TO FOLLOW</text>
+  </g>
+</svg>
