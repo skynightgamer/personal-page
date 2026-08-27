@@ -95,11 +95,6 @@ textarea {
   transform: translate(3px, -3px);
 }
 
-[data-io] {
-  opacity: 1;
-  transform: none;
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -111,10 +106,5 @@ textarea {
     scroll-behavior: auto !important;
     transition-duration: .001ms !important;
     animation-duration: .001ms !important;
-  }
-
-  [data-io] {
-    opacity: 1;
-    transform: none;
   }
 }

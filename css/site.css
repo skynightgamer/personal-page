@@ -942,6 +942,10 @@
   border-color: rgba(23, 23, 23, .3);
 }
 
+.baseline-home .project-media--top img {
+  object-position: top center;
+}
+
 .baseline-home .project-topline {
   justify-content: flex-start;
   margin-bottom: 5px;
@@ -1009,7 +1013,8 @@
   line-height: 1.5;
 }
 
-.about-detail .baseline-link::after {
+.about-detail .baseline-link::after,
+.record-grid .baseline-link::after {
   content: " ↘";
 }
 
@@ -1145,6 +1150,14 @@
 
 .about-page .baseline-footer {
   padding-top: 0;
+}
+
+.recognition-group + .recognition-group {
+  margin-top: 46px;
+}
+
+.recognition-group .baseline-section-label {
+  margin: 0 0 12px;
 }
 
 @media (max-width: 620px) {
@@ -1325,6 +1338,35 @@
 .astraeus-page .case-nav {
   margin-top: clamp(52px, 8vw, 84px);
   padding-block: clamp(36px, 5vw, 48px);
+}
+
+.reframe-page .case-cover {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #fff;
+}
+
+.reframe-page .case-cover img {
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.reframe-page .case-nav {
+  margin-top: clamp(52px, 8vw, 84px);
+}
+
+.film-page .case-cover {
+  background: #111;
+}
+
+.film-page .case-cover video {
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+
+.film-page .case-nav {
+  margin-top: clamp(52px, 8vw, 84px);
 }
 
 .ender-page .case-nav {
