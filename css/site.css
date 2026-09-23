@@ -538,12 +538,14 @@
 }
 
 .taskminder-page .narrative-chapter + .narrative-chapter,
-.reframe-page .narrative-chapter + .narrative-chapter {
+.reframe-page .narrative-chapter + .narrative-chapter,
+.physics-page .narrative-chapter + .narrative-chapter {
   margin-top: 0;
 }
 
 .taskminder-page .narrative-chapter + .narrative-chapter--results,
-.reframe-page .narrative-chapter + .narrative-chapter--results {
+.reframe-page .narrative-chapter + .narrative-chapter--results,
+.physics-page .narrative-chapter + .narrative-chapter--results {
   margin-top: clamp(16px, 2vw, 24px);
   padding-top: 0;
 }
@@ -1368,7 +1370,8 @@
   object-position: top center;
 }
 
-.reframe-page .case-nav {
+.reframe-page .case-nav,
+.physics-page .case-nav {
   margin-top: clamp(52px, 8vw, 84px);
 }
 
