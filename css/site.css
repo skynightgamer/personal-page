@@ -539,13 +539,15 @@
 
 .taskminder-page .narrative-chapter + .narrative-chapter,
 .reframe-page .narrative-chapter + .narrative-chapter,
-.physics-page .narrative-chapter + .narrative-chapter {
+.physics-page .narrative-chapter + .narrative-chapter,
+.film-page .narrative-chapter + .narrative-chapter {
   margin-top: 0;
 }
 
 .taskminder-page .narrative-chapter + .narrative-chapter--results,
 .reframe-page .narrative-chapter + .narrative-chapter--results,
-.physics-page .narrative-chapter + .narrative-chapter--results {
+.physics-page .narrative-chapter + .narrative-chapter--results,
+.film-page .narrative-chapter + .narrative-chapter--results {
   margin-top: clamp(16px, 2vw, 24px);
   padding-top: 0;
 }
@@ -1379,9 +1381,8 @@
   background: #111;
 }
 
-.film-page .case-cover video {
-  aspect-ratio: 16 / 9;
-  object-fit: contain;
+.film-page .story-media--wide {
+  margin-bottom: 38px;
 }
 
 .film-page .case-nav {
