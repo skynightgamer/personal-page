@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Reframe - Mingqi Li</title>
   <meta name="description" content="How a 3-person hackathon team built Reframe, an agent-orchestrated video pipeline that crops, validates and retries platform-ready social formats.">
+  <link rel="canonical" href="https://mingqi.li/projects/reframe.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -39,7 +40,7 @@
     </header>
 
     <figure class="case-cover">
-      <img src="../assets/reframe/results.jpg" alt="Reframe results screen with source preview, agent status, rendered output and automated quality checks">
+      <img src="../assets/reframe/results.webp" alt="Reframe results screen with source preview, agent status, rendered output and automated quality checks" width="1743" height="3600">
       <figcaption>A finished square-format job: the source video, what the agents did, the result and every check it passed, all on one screen.</figcaption>
     </figure>
 
@@ -61,7 +62,7 @@
 
         <div class="case-copy narrative-chapter">
           <figure class="story-media story-media--wide">
-            <img src="../assets/reframe/work.jpg" alt="Laptops open on a table at studiTUM during the Reframe hackathon" loading="lazy">
+            <img src="../assets/reframe/work.webp" alt="Laptops open on a table at studiTUM during the Reframe hackathon" width="1640" height="1230" loading="lazy">
             <figcaption>Working on Reframe at studiTUM during the hackathon.</figcaption>
           </figure>
           <p>We didn't want an AI alone to decide whether a crop is good, since AI reviewers can be biased. So plain code checks the hard facts first (resolution, audio, length, black bars, face in frame), and only then does an LLM watch the video as the audience. A failed render goes back with the exact complaint, up to 3 tries per format. After that, you still get the last playable version, marked as unvalidated.</p>

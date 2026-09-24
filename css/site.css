@@ -540,14 +540,16 @@
 .taskminder-page .narrative-chapter + .narrative-chapter,
 .reframe-page .narrative-chapter + .narrative-chapter,
 .physics-page .narrative-chapter + .narrative-chapter,
-.film-page .narrative-chapter + .narrative-chapter {
+.film-page .narrative-chapter + .narrative-chapter,
+.ender-page .narrative-chapter + .narrative-chapter {
   margin-top: 0;
 }
 
 .taskminder-page .narrative-chapter + .narrative-chapter--results,
 .reframe-page .narrative-chapter + .narrative-chapter--results,
 .physics-page .narrative-chapter + .narrative-chapter--results,
-.film-page .narrative-chapter + .narrative-chapter--results {
+.film-page .narrative-chapter + .narrative-chapter--results,
+.ender-page .narrative-chapter + .narrative-chapter--results {
   margin-top: clamp(16px, 2vw, 24px);
   padding-top: 0;
 }
