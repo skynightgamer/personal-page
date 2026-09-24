@@ -1165,6 +1165,12 @@
   letter-spacing: -.012em;
 }
 
+.about-body a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: .18em;
+}
+
 .about-page .baseline-footer {
   padding-top: 0;
 }
