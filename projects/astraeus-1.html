@@ -16,7 +16,7 @@
   <nav class="site-nav">
     <div class="wrap nav-inner">
       <a class="brand" href="/">Mingqi Li</a>
-      <div class="nav-links"><a href="../index.html#work">All work</a><a href="../about/">About</a><a href="../contact/">Contact</a></div>
+      <div class="nav-links"><a href="../about/">About</a><a href="../contact/">Contact</a></div>
     </div>
   </nav>
 
@@ -26,7 +26,7 @@
         <div class="project-hero-title">
           <p class="mono-label">Embedded systems / Aerospace</p>
           <h1>Astraeus 1</h1>
-          <p class="project-deck project-deck--intro">A model-rocket flight system currently in design, with custom avionics, redundant sensing, live telemetry and parachute recovery.</p>
+          <p class="project-deck project-deck--intro">A model rocket I'm designing, with my own flight computer, redundant sensors, live telemetry and parachute recovery.</p>
         </div>
         <div>
           <dl class="project-facts">
@@ -34,29 +34,27 @@
             <div><dt>Timeline</dt><dd>Dec 2025 - ongoing</dd></div>
             <div><dt>Stack</dt><dd>RPi Pico 2 · LoRa · GPS · KiCAD</dd></div>
             <div><dt>Status</dt><dd>Design phase · nothing built yet</dd></div>
-            <div><dt>Limits</dt><dd>20&nbsp;g motor · 120&nbsp;m ceiling</dd></div>
           </dl>
         </div>
       </div>
     </header>
 
     <figure class="case-cover">
-      <img src="../assets/astraeus-1/cover.svg" alt="Concept illustration of the Astraeus 1 model-rocket design" width="1600" height="1100">
-      <figcaption>A concept illustration - nothing has been built yet.</figcaption>
+      <img src="../assets/astraeus-1/cover.webp" alt="Astraeus 1 logo: a rocket rising through smoke past a planet against a starry sky" width="1600" height="1100">
+      <figcaption>The Astraeus 1 logo.</figcaption>
     </figure>
 
     <div class="wrap case-study">
       <section class="case-narrative" aria-label="The Astraeus 1 story">
         <div class="case-copy narrative-chapter">
-          <h2>In Germany this rocket gets 20&nbsp;g of propellant and 120&nbsp;m of altitude.</h2>
-          <p>Outside a club that is the limit: 20&nbsp;g per flight without an ascent permit, 120&nbsp;m ceiling. Not much room to make the flight itself impressive.</p>
-          <p>So the interesting part is what the rocket does inside that box. Astraeus 1 logs altitude, acceleration and attitude, sends them to a ground station while it flies, and releases its own parachute from sensor data instead of a delay charge burning down.</p>
+          <h2>Without a permit, I get 20&nbsp;g of propellant and 120&nbsp;m of altitude.</h2>
+          <p>Outside a rocketry club, German rules allow 20&nbsp;g of propellant per flight without an ascent permit, and the rocket can't go higher than 120&nbsp;m. That doesn't leave much room for an impressive flight.</p>
+          <p>So I'm focusing on what happens inside the rocket. Astraeus 1 will log altitude, acceleration and orientation, send them to a ground station during the flight and release its own parachute based on sensor data instead of a delay charge.</p>
         </div>
 
         <div class="case-copy narrative-chapter">
-          <h2>The motor decided most of the design.</h2>
-          <p>A Klima C6-P: 10&nbsp;Ns impulse, 6&nbsp;N average thrust, 1.6&nbsp;s burn. Klima gives a maximum lift-off mass of 160&nbsp;g and my target is 175&nbsp;g, but that figure assumes a launch rod of about a metre. On a 3&nbsp;m rail the heavier rocket still leaves at roughly 17.9&nbsp;m/s instead of 12.8&nbsp;m/s, fast enough for the fins to stabilise it. That is why I am building a rail instead of using a rod.</p>
-          <p>If it comes out heavy, the order is already decided: smaller servo, smaller battery, lighter parachute, about 16&nbsp;g between them.</p>
+          <p>Most of the design follows from the motor, a Klima C6-P with 10&nbsp;Ns of impulse, 6&nbsp;N average thrust and a 1.6&nbsp;s burn. Klima lists a maximum lift-off mass of 160&nbsp;g and my target is 175&nbsp;g, but that limit assumes a launch rod of about a metre. On a 3&nbsp;m rail, I calculated an exit speed of about 17.9&nbsp;m/s, compared to 12.8&nbsp;m/s on the rod. That's fast enough for the fins to keep the rocket stable, so I'm planning to build a rail.</p>
+          <p>If the rocket ends up too heavy, I already know what to cut first: a smaller servo, a smaller battery and a lighter parachute, which together save about 16&nbsp;g.</p>
           <div class="result-strip">
             <div class="result"><strong>175 g</strong><span>Target lift-off mass</span></div>
             <div class="result"><strong>10 Ns</strong><span>Motor total impulse</span></div>
@@ -65,41 +63,35 @@
         </div>
 
         <div class="case-copy narrative-chapter">
-          <h2>Two of everything the parachute depends on.</h2>
-          <p>Two BMP388 barometers and two LSM6DSOX IMUs, compared against each other, with a disagreeing sensor flagged instead of averaged in.</p>
-          <p>Apogee is read from barometric vertical speed across both barometers, behind a minimum time and altitude gate and several confirming samples. A timeout taken from the simulated flight profile can also trigger it, but only once launch has been confirmed. Too early and the parachute tears off at speed, too late and it opens near the ground.</p>
+          <p>Every sensor the parachute depends on is doubled: two BMP388 barometers and two LSM6DSOX IMUs. The flight computer compares each pair, and if one sensor disagrees, it gets flagged instead of averaged in.</p>
+          <p>To detect apogee, the flight computer uses the vertical speed from both barometers. It only accepts it after a minimum time and altitude, and after several samples in a row agree. As a backup, a timeout based on the simulated flight can also deploy the parachute, but only once launch has been confirmed. If the parachute opens too early, it can tear off at speed. If it opens too late, it opens too close to the ground.</p>
         </div>
 
         <div class="case-copy narrative-chapter">
-          <h2>The flight computer never touches the igniter.</h2>
-          <p>Ignition stays separate hardware: certified igniters and a commercial launch controller at an approved site. Nothing on the board can reach that circuit.</p>
-          <p>The firmware runs nine states, from BOOT/SELFTEST to FAULT. In SAFE the deployment pin is high-impedance and a mechanical pin has to be pulled by hand before the servo can move at all. Once the rocket is flying the ground station can read telemetry but cannot command anything.</p>
+          <p>The flight computer has no connection to the igniter. Ignition uses certified igniters and a commercial launch controller at an approved launch site, completely separate from my board.</p>
+          <p>The firmware has nine states, from BOOT/SELFTEST to FAULT. In SAFE, the deployment pin is high-impedance, and a mechanical safety pin has to be pulled by hand before the servo can move. During the flight, the ground station can only read telemetry. It can't send commands.</p>
         </div>
 
         <div class="case-copy narrative-chapter">
-          <h2>Nothing is glued.</h2>
-          <p>No epoxy in the avionics bay. Modules plug into JST connectors on a printed tray with M2 screws, so sensors can be unplugged, tested on the bench and reused in the next rocket. How they are mounted is also a measurement decision: IMUs rigid and aligned, GPS on foam, barometer port shielded from direct airflow but not sealed.</p>
-          <p>The board is four layers in KiCAD with one continuous ground plane, since a switching converter, an 868&nbsp;MHz transmitter and two IMUs share it. Sensors and radio run on separate 3.3&nbsp;V rails so a transmit burst cannot drag the IMUs down with it.</p>
+          <p>I'm not gluing anything in the avionics bay. The modules plug into JST connectors on a printed tray held by M2 screws, so I can unplug sensors, test them on the bench and reuse them in the next rocket. How they're mounted also affects the measurements: the IMUs are fixed rigidly and aligned, the GPS sits on foam, and the barometer port is shielded from direct airflow without being sealed.</p>
+          <p>The board will be a four-layer design with one continuous ground plane, because a switching converter, an 868&nbsp;MHz transmitter and two IMUs all share it. The sensors and the radio run on separate 3.3&nbsp;V rails, so the radio can't pull down the IMUs' supply voltage when it transmits.</p>
 
           <figure class="story-media story-media--wide">
-            <div class="story-placeholder story-placeholder--screen" role="img" aria-label="Reserved space for the power architecture and PCB sketch">
-              <span class="mono-label">Design artefact</span>
-              <strong>Power architecture and PCB sketch</strong>
-              <p>Add the KiCAD schematic or the power-tree drawing once the layout is finished.</p>
-            </div>
-            <figcaption>The power tree exists as a sketch and a current budget. Turning it into a layout is the next step.</figcaption>
+            <a href="../assets/astraeus-1/schematic-sketch.webp" target="_blank" rel="noopener">
+              <img src="../assets/astraeus-1/schematic-sketch.webp" alt="Hand-drawn schematic of the Astraeus 1 flight computer: battery, BMS, fuse and switch at the top; below, the board around a Pi Pico 2 with connectors for the servo, LoRa radio, SD card, piezo, two BMP388 barometers, two LSM6DSOX IMUs and GPS" width="1752" height="1720" loading="lazy">
+            </a>
+            <figcaption>Hand-drawn schematic. Power path at the top, the board around the Pi Pico 2 below, with a separate 3.3&nbsp;V rail for the radio and surge protection on every connector. Click for full size.</figcaption>
           </figure>
         </div>
 
         <div class="case-copy narrative-chapter">
-          <h2>On the pad the only interface is a piezo.</h2>
-          <p>Three short beeps: sensors and battery good. Four short: SD card missing or unwritable. Two short, repeating: a sensor failed to start. Silence: the Pico is not running. There is no continuous low-battery tone, because a buzzer left on drains the battery it is warning about.</p>
+          <p>On the launch pad, a piezo buzzer is the only feedback. Three short beeps mean the sensors and battery are fine. Four short beeps mean the SD card is missing or can't be written to. Two short beeps on repeat mean a sensor didn't start. No sound means the Pico isn't running. There's no continuous low-battery warning, because a buzzer that stays on would drain the battery even faster.</p>
         </div>
 
-        <div class="case-copy narrative-chapter">
-          <h2>Where it stands.</h2>
-          <p>Astraeus 1 is currently schematics, a parts list and a current budget. Next is the PCB layout, the airframe CAD, an OpenRocket run for stability and rail-exit speed, then parts and bench testing - including the failures on purpose: sensors unplugged, barometers forced to disagree, resets in every flight state.</p>
-          <p>A second version with a camera, a small payload and thrust vector control is sketched out, and may become a Jugend forscht entry in 2028/2029. The first flight is called Above and Beyond.</p>
+        <div class="case-copy narrative-chapter narrative-chapter--results">
+          <p>Right now, Astraeus 1 is a set of hand-drawn schematics, a parts list and a current budget. Next come the KiCAD schematics and PCB layout, the airframe in CAD and an OpenRocket simulation to check stability and rail-exit speed. After that I'll order parts and start bench testing, including breaking things on purpose: unplugging sensors, forcing the barometers to disagree and resetting the board in every flight state. Before the first flight, I'll ask a rocketry club to check the rocket.</p>
+          <p>I'm aiming to have it in an advanced stage by summer 2027, with the first flight by summer 2028 at the latest.</p>
+          <p>I've also sketched a second version with a camera, a small payload and thrust vector control, which might become a Jugend forscht entry in 2028/2029. The first flight will be called Above and Beyond.</p>
 
           <div class="case-links">
             <a class="text-link" href="../contact/">Ask me about Astraeus</a>

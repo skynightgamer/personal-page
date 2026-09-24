@@ -534,22 +534,10 @@
 }
 
 .narrative-chapter + .narrative-chapter {
-  margin-top: clamp(72px, 10vw, 116px);
-}
-
-.taskminder-page .narrative-chapter + .narrative-chapter,
-.reframe-page .narrative-chapter + .narrative-chapter,
-.physics-page .narrative-chapter + .narrative-chapter,
-.film-page .narrative-chapter + .narrative-chapter,
-.ender-page .narrative-chapter + .narrative-chapter {
   margin-top: 0;
 }
 
-.taskminder-page .narrative-chapter + .narrative-chapter--results,
-.reframe-page .narrative-chapter + .narrative-chapter--results,
-.physics-page .narrative-chapter + .narrative-chapter--results,
-.film-page .narrative-chapter + .narrative-chapter--results,
-.ender-page .narrative-chapter + .narrative-chapter--results {
+.narrative-chapter + .narrative-chapter--results {
   margin-top: clamp(16px, 2vw, 24px);
   padding-top: 0;
 }
@@ -589,7 +577,8 @@
   gap: 24px;
 }
 
-.story-media > img {
+.story-media > img,
+.story-media > a > img {
   width: 100%;
   height: auto;
   border: 1px solid var(--line);
@@ -940,7 +929,7 @@
 
 .baseline-work .baseline-section-label::after,
 .baseline-footer .baseline-section-label::after {
-  content: " ↘";
+  content: " ↗";
 }
 
 .baseline-work > .wrap > .baseline-section-label {
@@ -1032,7 +1021,7 @@
 
 .about-detail .baseline-link::after,
 .record-grid .baseline-link::after {
-  content: " ↘";
+  content: " ↗";
 }
 
 .baseline-record {
@@ -1163,12 +1152,6 @@
   font-size: 20px;
   line-height: 1.5;
   letter-spacing: -.012em;
-}
-
-.about-body a {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: .18em;
 }
 
 .about-page .baseline-footer {
@@ -1353,19 +1336,14 @@
 
 .project-page .footer-inner {
   min-height: 80px;
-  border-top-color: var(--line);
+  border-top: 0;
   font-size: 16px;
 }
 
-.taskminder-page .case-nav {
-  margin-top: clamp(28px, 4vw, 40px);
-  padding-block: clamp(24px, 3vw, 32px);
-  border-bottom: 1px solid var(--line);
-}
-
-.astraeus-page .case-nav {
+.project-page .case-nav {
   margin-top: clamp(52px, 8vw, 84px);
-  padding-block: clamp(36px, 5vw, 48px);
+  padding-block: clamp(28px, 4vw, 36px);
+  border-bottom: 1px solid var(--line);
 }
 
 .reframe-page .case-cover {
@@ -1380,11 +1358,6 @@
   object-position: top center;
 }
 
-.reframe-page .case-nav,
-.physics-page .case-nav {
-  margin-top: clamp(52px, 8vw, 84px);
-}
-
 .film-page .case-cover {
   background: #111;
 }
@@ -1393,18 +1366,6 @@
   margin-bottom: 38px;
 }
 
-.film-page .case-nav {
-  margin-top: clamp(52px, 8vw, 84px);
-}
-
-.ender-page .case-nav {
-  margin-top: clamp(52px, 8vw, 84px);
-}
-
-.taskminder-page .footer-inner {
-  margin-top: 0;
-  border-top: 0;
-}
 
 @media (max-width: 620px) {
   .project-page .project-hero-grid,
